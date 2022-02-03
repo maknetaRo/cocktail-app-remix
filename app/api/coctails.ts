@@ -50,10 +50,22 @@ export async function getRandomDrink() {
 }
 
 export async function getDrinksByLetter(letter: string) {
+  console.log('Letter: ', letter);
   const response = await fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
   );
   const data = await response.json();
   const drinks: Drink[] = data.drinks;
+
   return drinks;
+}
+
+export async function getDrinkById(drinkId: string) {
+  console.log('Drink ID: ', drinkId);
+  const response = await fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`
+  );
+  const data = await response.json();
+  const drink: Drink = data.drinks[0];
+  return drink;
 }

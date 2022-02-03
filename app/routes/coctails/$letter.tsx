@@ -11,14 +11,14 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function CocktailsLetter() {
   const drinks = useLoaderData<Drink[]>();
-  console.log(drinks);
+
   return (
     <>
       <div className="container-page">
         <div className="cocktail-list">
           {drinks.map((drink) => (
             <Link
-              to={drink.idDrink}
+              to={'/drinks/' + drink.idDrink}
               key={drink.idDrink}
               title={drink.strDrink}
               prefetch="intent"
