@@ -1,9 +1,12 @@
 import { NavLink } from 'remix';
+import SearchForm from './SearchForm';
 
 export default function Header() {
   return (
     <header className="header">
       <h1 className="title">Cocktail Recipes</h1>
+
+      {/* <SearchForm /> */}
 
       <ul>
         <li className="nav-item">

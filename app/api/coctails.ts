@@ -63,11 +63,24 @@ export async function getDrinksByLetter(letter: string) {
 }
 
 export async function getDrinkById(drinkId: string) {
-  console.log('Drink ID: ', drinkId);
   const response = await fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`
   );
   const data = await response.json();
   const drink: Drink = data.drinks[0];
   return drink;
+}
+export async function getDrinksByName(strDrink: string) {
+  console.log('drinks name: ', strDrink);
+  console.log(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${strDrink}`);
+  const response = await fetch(
+    `www.thecocktaildb.com/api/json/v1/1/search.php?s=${strDrink}`
+  );
+  console.log('Response: ', response);
+
+  const data = await response.json();
+  console.log(data);
+  const drinks: Drink[] = data.drinks;
+
+  return drinks;
 }

@@ -6,13 +6,12 @@ export const loader: LoaderFunction = async ({ params }) => {
   console.log(params);
   invariant(params.cocktail, 'expected params.cocktail');
   const drink = await getDrinkById(params.cocktail);
-
   return drink;
 };
 
 export default function DrinkById() {
   const drink = useLoaderData<Drink>();
-  console.log(drink);
+
   return (
     <div className="random-cocktail">
       <h2>{drink.strDrink}</h2>
