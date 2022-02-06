@@ -37,6 +37,7 @@ export type Drink = {
   strMeasure14?: string;
   strMeasure15?: string;
 };
+// www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
 export async function getRandomDrink() {
   const response = await fetch(
@@ -51,6 +52,7 @@ export async function getRandomDrink() {
 
 export async function getDrinksByLetter(letter: string) {
   console.log('Letter: ', letter);
+
   const response = await fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
   );

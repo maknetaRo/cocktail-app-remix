@@ -18,7 +18,7 @@ export default function CocktailsLetter() {
         <div className="cocktail-list">
           {drinks.map((drink) => (
             <Link
-              to={'/drinks/' + drink.idDrink}
+              to={drink.idDrink}
               key={drink.idDrink}
               title={drink.strDrink}
               prefetch="intent"

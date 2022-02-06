@@ -7,8 +7,12 @@ export default function AlphabetList() {
     <div className="letters-row">
       <ul className="letters-list">
         {letters.map((letter) => (
-          <li>
-            <NavLink to={'/coctails/' + letter} className="letter" key={letter}>
+          <li key={letter}>
+            <NavLink
+              to={'/cocktails/' + letter}
+              className="letter"
+              key={letter}
+            >
               {letter}
             </NavLink>
           </li>
