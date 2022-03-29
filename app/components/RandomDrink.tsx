@@ -40,6 +40,18 @@ export default function RandomDrink() {
               <li className="ingredient-elem">
                 {randomDrink.strMeasure4} {randomDrink.strIngredient4}
               </li>
+              <li className="ingredient-elem">
+                {randomDrink.strMeasure5} {randomDrink.strIngredient5}
+              </li>
+              <li className="ingredient-elem">
+                {randomDrink.strMeasure6} {randomDrink.strIngredient6}
+              </li>
+              <li className="ingredient-elem">
+                {randomDrink.strMeasure7} {randomDrink.strIngredient7}
+              </li>
+              <li className="ingredient-elem">
+                {randomDrink.strMeasure8} {randomDrink.strIngredient8}
+              </li>
             </ul>
           </div>
 

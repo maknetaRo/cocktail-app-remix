@@ -1,21 +1,29 @@
-import { Form, LoaderFunction, useLoaderData, Outlet } from 'remix';
-import { getDrinksByName, Drink } from '~/api/coctails';
+import {
+  Form,
+  LoaderFunction,
+  useLoaderData,
+  Outlet,
+  json,
+  redirect,
+} from 'remix';
+import { getDrinksByName, Drink, getDrinkById } from '~/api/coctails';
 
 export const loader: LoaderFunction = async ({ request }) => {
-  console.log(request);
   const url = new URL(request.url);
-  const strDrink = url.searchParams.get('q');
-  if (!strDrink) return null;
-  console.log('Nazwa drinka: ', strDrink);
-  return getDrinksByName(strDrink);
+
+  const search = url.searchParams.get('q');
+  if (!search) return null;
+  const data = getDrinksByName(search);
+
+  return { data };
 };
 
 export default function IndexCocktailRoute() {
   const drinks = useLoaderData<Drink[]>();
-  console.log('All drinks: ', drinks);
+
   return (
     <div>
-      <Form reloadDocument method="get">
+      <Form reloadDocument method="get" action="/cocktails">
         <label htmlFor="search">Search </label>
         <input type="text" id="search" name="q" />
         <button type="submit">Search</button>

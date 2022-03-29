@@ -43,6 +43,18 @@ export default function DrinkById() {
               <li className="ingredient-elem">
                 {drink.strMeasure4} {drink.strIngredient4}
               </li>
+              <li className="ingredient-elem">
+                {drink.strMeasure5} {drink.strIngredient5}
+              </li>
+              <li className="ingredient-elem">
+                {drink.strMeasure6} {drink.strIngredient6}
+              </li>
+              <li className="ingredient-elem">
+                {drink.strMeasure7} {drink.strIngredient7}
+              </li>
+              <li className="ingredient-elem">
+                {drink.strMeasure8} {drink.strIngredient8}
+              </li>
             </ul>
           </div>
 
